@@ -56,11 +56,11 @@ export default function LogFormPage() {
                     />
                     <button
                         type="submit"
-                        className="bg-blue-900 text-white px-6 py-4 rounded-lg hover:bg-blue-800 cursor-pointer w-fit"
+                        className="bg-blue-500 text-white px-6 py-4 rounded-lg hover:bg-blue-400 transition-colors cursor-pointer w-fit"
                     >
                         Submit data
                     </button>
-                    {message && <p className="text-blue-900 font-semibold">{message}</p>}
+                    {message && <p className="text-blue-500 font-semibold">{message}</p>}
                 </form>
             </div>
         </main>

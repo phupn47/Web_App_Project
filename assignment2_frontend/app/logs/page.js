@@ -64,7 +64,7 @@ export default function LogsPage() {
                         onClick={() => setPage(num)}
                         className={`px-4 py-2 rounded-lg border ${num === page
                             ? "bg-blue-500 text-neutral-50 border-neutral-900"
-                            : "bg-neutral-50 hover:bg-neutral-200 border-neutral-900"
+                            : "bg-neutral-50 hover:bg-neutral-200 transition-colors border-neutral-900"
                             }`}
                     >
                         {num}
