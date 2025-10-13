@@ -14,10 +14,13 @@ The system allows users to:
 - Log temperature data from the drone.
 - View and navigate historical logs with pagination.
 
-## Design
+## UI Design
 
-The UI was designed in **Figma** before implementation.  
--> [View Design Prototype](https://www.figma.com/design/twvPiRn7snu7DkJ22OgeId/Drone-Project?node-id=31-96&t=I9n3Vya0UZMZ3J4S-1)
+All user interface layouts and components were **personally designed by me** using **Figma** before the development stage.  
+This ensured that the web application has a consistent and modern design.  
+
+-> [Click to View Full Design Board](https://www.figma.com/design/twvPiRn7snu7DkJ22OgeId/Drone-Monitoring-Dashboard?node-id=31-96&t=I9n3Vya0UZMZ3J4S-1)  
+
 
 ## Technologies Used
 
