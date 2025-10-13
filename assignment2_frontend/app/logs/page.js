@@ -56,13 +56,13 @@ export default function LogsPage() {
                     disabled={page <= 1}
                     className="px-4 py-2 bg-neutral-200 rounded-lg border border-neutral-900 text-neutral-900 disabled:opacity-50 flex"
                 >
-                    ◀
+                    &lt;
                 </button>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
                     <button
                         key={num}
                         onClick={() => setPage(num)}
-                        className={`px-3 py-1 rounded-lg border ${num === page
+                        className={`px-4 py-2 rounded-lg border ${num === page
                             ? "bg-blue-500 text-neutral-50 border-neutral-900"
                             : "bg-neutral-50 hover:bg-neutral-200 border-neutral-900"
                             }`}
@@ -75,7 +75,7 @@ export default function LogsPage() {
                     disabled={page >= totalPages}
                     className="px-4 py-2 bg-neutral-200 rounded-lg border border-neutral-900 text-neutral-900 disabled:opacity-50"
                 >
-                    ▶
+                    &gt;
                 </button>
             </div>
         </main>
