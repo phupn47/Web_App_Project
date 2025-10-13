@@ -24,10 +24,13 @@ export default function LogsPage() {
 
     return (
         <main className="p-8">
-            <h1 className="text-2xl font-bold mb-4">Drone Logs</h1>
-            <table className="min-w-full border-collapse border border-gray-300">
-                <thead className="bg-gray-100">
-                    <tr>
+            <div className="mb-16">
+                <h1 className="text-neutral-900 text-3xl font-bold mb-4 tracking-wide">Drone Logs</h1>
+                <p className="text-neutral-900">Shows your drone's temperature logs.</p>
+            </div>
+            <table className="w-full border-collapse border text-neutral-900">
+                <thead className="bg-blue-200">
+                    <tr className="text-neutral-900">
                         <th className="border p-2">Created</th>
                         <th className="border p-2">Country</th>
                         <th className="border p-2">Drone ID</th>
@@ -35,9 +38,9 @@ export default function LogsPage() {
                         <th className="border p-2">Celsius</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="bg-blue-50">
                     {logs.map((log, index) => (
-                        <tr key={index}>
+                        <tr key={index} className="text-neutral-900">
                             <td className="border p-2">{new Date(log.created).toLocaleString()}</td>
                             <td className="border p-2">{log.country}</td>
                             <td className="border p-2">{log.drone_id}</td>
@@ -47,21 +50,21 @@ export default function LogsPage() {
                     ))}
                 </tbody>
             </table>
-            <div className="flex justify-center mt-6 gap-4">
+            <div className="flex justify-center mt-8 gap-4">
                 <button
                     onClick={() => setPage(page - 1)}
                     disabled={page <= 1}
-                    className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                    className="px-4 py-2 bg-neutral-200 rounded-lg border border-neutral-900 text-neutral-900 disabled:opacity-50 flex"
                 >
-                    ◀ Prev
+                    ◀
                 </button>
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((num) => (
                     <button
                         key={num}
                         onClick={() => setPage(num)}
-                        className={`px-3 py-1 rounded-md border ${num === page
-                                ? "bg-blue-500 text-white border-blue-500"
-                                : "bg-white hover:bg-gray-100 border-gray-300"
+                        className={`px-3 py-1 rounded-lg border ${num === page
+                            ? "bg-blue-500 text-neutral-50 border-neutral-900"
+                            : "bg-neutral-50 hover:bg-neutral-200 border-neutral-900"
                             }`}
                     >
                         {num}
@@ -70,9 +73,9 @@ export default function LogsPage() {
                 <button
                     onClick={() => setPage(page + 1)}
                     disabled={page >= totalPages}
-                    className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
+                    className="px-4 py-2 bg-neutral-200 rounded-lg border border-neutral-900 text-neutral-900 disabled:opacity-50"
                 >
-                    Next ▶
+                    ▶
                 </button>
             </div>
         </main>

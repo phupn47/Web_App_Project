@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { useState } from "react"
 
 export default function LogFormPage() {
@@ -34,23 +35,34 @@ export default function LogFormPage() {
 
     return (
         <main className="p-8">
-            <h1 className="text-2xl font-bold mb-4">Temperature Log Form</h1>
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                    type="number"
-                    placeholder="Enter temperature in Celsius"
-                    value={celsius}
-                    onChange={(e) => setCelsius(e.target.value)}
-                    className="border p-2 rounded-md w-60"
+            <div className="mb-16">
+                <h1 className="text-neutral-900 text-3xl font-bold mb-4 tracking-wide">Temperature Log Form</h1>
+                <p className="text-neutral-900">Use this form to log the drone's temperature in Celsius. the data will be saved along with the drone info from the Config page.</p>
+            </div>
+            <div className="flex gap-16">
+                <Image
+                    src="/images/drone-form.png"
+                    alt="Drone_form"
+                    width={300}
+                    height={300}
                 />
-                <button
-                    type="submit"
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-                >
-                    Submit data
-                </button>
-            </form>
-            {message && <p className="mt-4 text-gray-700">{message}</p>}
+                <form onSubmit={handleSubmit} className="flex flex-col justify-center gap-8 w-[500px]">
+                    <input
+                        type="number"
+                        placeholder="Enter temperature in Celsius"
+                        value={celsius}
+                        onChange={(e) => setCelsius(e.target.value)}
+                        className="border border-neutral-900 pl-6 py-4 rounded-lg w-full bg-blue-50"
+                    />
+                    <button
+                        type="submit"
+                        className="bg-blue-900 text-white px-6 py-4 rounded-lg hover:bg-blue-800 cursor-pointer w-fit"
+                    >
+                        Submit data
+                    </button>
+                    {message && <p className="text-blue-900 font-semibold">{message}</p>}
+                </form>
+            </div>
         </main>
     );
 }

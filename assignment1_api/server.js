@@ -73,20 +73,22 @@ app.get('/logs/:droneId', async (req, res) => {
     const perPage = req.query.perPage || 12;
 
     try {
-        const response = await fetch(`${LOG_URL}?filter=(drone_id="${droneId}")&page=${page}&perPage=${perPage}`, {
+        const response = await fetch(`${LOG_URL}?filter=(drone_id="${droneId}")&sort=-created&page=${page}&perPage=${perPage}`, {
             headers: {
                 Authorization: `Bearer ${LOG_API_TOKEN}`
             }
         });
 
         const data = await response.json();
-        const logs = data.items.map((log) => ({
-            drone_id: log.drone_id,
-            drone_name: log.drone_name,
-            created: log.created,
-            country: log.country,
-            celsius: log.celsius,
-        }));
+
+        const logs = data.items
+            .map((log) => ({
+                drone_id: log.drone_id,
+                drone_name: log.drone_name,
+                created: log.created,
+                country: log.country,
+                celsius: log.celsius,
+            }));
 
         res.json({
             page: data.page,

@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image";
 
 export default function ConfigPage() {
     const [config, setConfig] = useState(null);
@@ -14,16 +15,39 @@ export default function ConfigPage() {
             });
     }, []);
 
-    if (!config) return <p>Loading...</p>;
+    if (!config) return (
+        <main className="text-xl text-neutral-900 font-semibold p-8 text-center">
+            <p>Loading...</p>
+        </main>
+    );
 
     return (
         <main className="p-8">
-            <h1 className="text-2xl font-bold mb-4">Drone Configuration</h1>
-            <div className="space-y-2 bg-gray-50 p-4 rounded-md shadow">
-                <p>Drone ID: {config.drone_id}</p>
-                <p>Drone Name: {config.drone_name}</p>
-                <p>Light: {config.light}</p>
-                <p>Country: {config.country}</p>
+            <div className="mb-16">
+                <h1 className="text-neutral-900 text-3xl font-bold mb-4 tracking-wide">Drone Configuration</h1>
+                <p className="text-neutral-900">The loaded data will be saved to Local Storage for later use in other pages.</p>
+            </div>
+            <div className="flex gap-16">
+                <Image
+                    src="/images/drone-config.png"
+                    alt="Drone_config"
+                    width={300}
+                    height={300}
+                />
+                <div className="w-[500px] h-fit flex border border-blue-900 bg-blue-50 p-8 rounded-lg">
+                    <div className="flex flex-col text-neutral-900 text-xl font-semibold gap-8 mr-8">
+                        <p>Drone ID</p>
+                        <p>Drone Name</p>
+                        <p>Light</p>
+                        <p>Country</p>
+                    </div>
+                    <div className="flex flex-col text-neutral-900 text-xl gap-8">
+                        <p>{config.drone_id}</p>
+                        <p>{config.drone_name}</p>
+                        <p>{config.light}</p>
+                        <p>{config.country}</p>
+                    </div>
+                </div>
             </div>
         </main>
     );

@@ -3,37 +3,38 @@ import "./globals.css"; // ถ้ามี global styles
 
 export const metadata = {
   title: "Drone Monitoring Dashboard",
+  description: "Web App Project for Drone Config & Log Management",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex min-h-screen">
-        <aside className="w-60 bg-gray-800 text-white flex flex-col justify-between">
+        <aside className="w-60 bg-blue-900 text-neutral-50 flex flex-col justify-between">
           <div className="p-6">
-            <h1 className="text-xl font-bold mb-6 text-center">Drone Dashboard</h1>
-            <nav className="flex flex-col gap-3">
+            <h1 className="text-xl font-bold mb-6 text-center tracking-wide">Drone Dashboard</h1>
+            <nav className="flex flex-col gap-3 ">
               <Link
                 href="/"
-                className="px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 rounded hover:bg-blue-800 transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/config"
-                className="px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors"
               >
                 View Config
               </Link>
               <Link
                 href="/form"
-                className="px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors"
               >
                 Temperature Log
               </Link>
               <Link
                 href="/logs"
-                className="px-4 py-2 rounded hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors"
               >
                 View Logs
               </Link>
@@ -41,8 +42,8 @@ export default function RootLayout({ children }) {
           </div>
 
           {/* footer */}
-          <div className="p-4 text-center text-xs text-gray-400 border-t border-gray-700">
-            © 2025 Drone Project
+          <div className="p-4 text-center text-sm text-blue-200 border-t border-blue-200">
+            Web App Project
           </div>
         </aside>
 
