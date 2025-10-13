@@ -37,7 +37,7 @@ export default function LogFormPage() {
         <main className="p-8">
             <div className="mb-16">
                 <h1 className="text-neutral-900 text-3xl font-bold mb-4 tracking-wide">Temperature Log Form</h1>
-                <p className="text-neutral-900">Use this form to log the drone's temperature in Celsius. the data will be saved along with the drone info from the Config page.</p>
+                <p className="text-neutral-900">Use this form to log the drone temperature in Celsius. the data will be saved along with the drone info from the Config page.</p>
             </div>
             <div className="flex gap-16">
                 <Image

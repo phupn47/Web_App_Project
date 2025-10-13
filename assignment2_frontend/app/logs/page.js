@@ -26,7 +26,7 @@ export default function LogsPage() {
         <main className="p-8">
             <div className="mb-16">
                 <h1 className="text-neutral-900 text-3xl font-bold mb-4 tracking-wide">Drone Logs</h1>
-                <p className="text-neutral-900">Shows your drone's temperature logs.</p>
+                <p className="text-neutral-900">Shows your drone temperature logs.</p>
             </div>
             <table className="w-full border-collapse border text-neutral-900">
                 <thead className="bg-blue-200">
