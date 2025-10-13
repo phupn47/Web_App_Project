@@ -10,7 +10,10 @@ app.use(express.json());
 
 app.use(
     cors({
-        origin: "http://localhost:3000", // Frontend
+        origin: [
+            "http://localhost:3000", // Frontend
+            "https://web-app-drone.vercel.app", // Deployed
+        ],
     })
 );
 
