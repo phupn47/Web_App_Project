@@ -7,7 +7,7 @@ export default function ConfigPage() {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/configs/66010608")
+        fetch("https://web-app-backend-j07q.onrender.com/configs/66010608")
             .then((res) => res.json())
             .then((data) => {
                 setConfig(data);

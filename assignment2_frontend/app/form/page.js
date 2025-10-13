@@ -19,7 +19,7 @@ export default function LogFormPage() {
             celsius: Number(celsius),
         };
 
-        const response = await fetch("http://localhost:5000/logs", {
+        const response = await fetch("https://web-app-backend-j07q.onrender.com/logs", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)

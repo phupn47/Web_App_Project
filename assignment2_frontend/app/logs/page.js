@@ -11,7 +11,7 @@ export default function LogsPage() {
         const config = JSON.parse(localStorage.getItem("droneConfig"));
         if (!config) return;
 
-        const response = await fetch(`http://localhost:5000/logs/${config.drone_id}?page=${pageNum}&perPage=12`);
+        const response = await fetch(`https://web-app-backend-j07q.onrender.com/logs/${config.drone_id}?page=${pageNum}&perPage=12`);
         const data = await response.json();
 
         setLogs(data.items || []);
