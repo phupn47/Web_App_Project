@@ -1,11 +1,18 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+
+app.use(
+    cors({
+        origin: "http://localhost:3000", // Frontend
+    })
+);
 
 // Define Port
 const PORT = process.env.PORT;
@@ -62,28 +69,32 @@ app.get('/status/:droneId', async (req, res) => {
 
 app.get('/logs/:droneId', async (req, res) => {
     const droneId = req.params.droneId;
+    const page = req.query.page || 1;
+    const perPage = req.query.perPage || 12;
 
     try {
-        const response = await fetch(`${LOG_URL}?filter=(drone_id="${droneId}")`, {
+        const response = await fetch(`${LOG_URL}?filter=(drone_id="${droneId}")&page=${page}&perPage=${perPage}`, {
             headers: {
                 Authorization: `Bearer ${LOG_API_TOKEN}`
             }
         });
 
         const data = await response.json();
-        const logs = data.items
-            .filter((item) => item.drone_id == droneId)
-            .sort((a, b) => new Date(b.created) - new Date(a.created))
-            .slice(0, 12)
-            .map((log) => ({
-                drone_id: log.drone_id,
-                drone_name: log.drone_name,
-                created: log.created,
-                country: log.created,
-                celsius: log.celsius,
-            }));
+        const logs = data.items.map((log) => ({
+            drone_id: log.drone_id,
+            drone_name: log.drone_name,
+            created: log.created,
+            country: log.country,
+            celsius: log.celsius,
+        }));
 
-        res.json(logs);
+        res.json({
+            page: data.page,
+            perPage: data.perPage,
+            totalItems: data.totalItems,
+            totalPages: data.totalPages,
+            items: logs
+        });
     } catch (error) {
         res.status(500).json({ message: "Error fetching status", error: error.message });
     }
