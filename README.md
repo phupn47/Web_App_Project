@@ -14,13 +14,24 @@ The system allows users to:
 - Log temperature data from the drone.
 - View and navigate historical logs with pagination.
 
+## Deployed Links
+
+### Frontend (Client)
+
+Deployed on **Vercel**  
+https://web-app-drone.vercel.app/
+
+### Backend (API Server)
+
+Deployed on **Render**  
+https://web-app-backend-j07q.onrender.com/
+
 ## UI Design
 
 All user interface layouts and components were **personally designed by me** using **Figma** before the development stage.  
-This ensured that the web application has a consistent and modern design.  
+This ensured that the web application has a consistent and modern design.
 
--> [Click to View Full Design Board](https://www.figma.com/design/twvPiRn7snu7DkJ22OgeId/Drone-Monitoring-Dashboard?node-id=31-96&t=I9n3Vya0UZMZ3J4S-1)  
-
+-> [Click to View Full Design Board](https://www.figma.com/design/twvPiRn7snu7DkJ22OgeId/Drone-Monitoring-Dashboard?node-id=31-96&t=I9n3Vya0UZMZ3J4S-1)
 
 ## Technologies Used
 
