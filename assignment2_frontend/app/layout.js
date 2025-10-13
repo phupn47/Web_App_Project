@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./globals.css"; // ถ้ามี global styles
+import "./globals.css";
 
 export const metadata = {
   title: "Drone Monitoring Dashboard",
@@ -41,14 +41,12 @@ export default function RootLayout({ children }) {
             </nav>
           </div>
 
-          {/* footer */}
           <div className="p-4 text-center text-sm text-blue-200 border-t border-blue-200">
-            Web App Project
+            Phawadon - 66010608
           </div>
         </aside>
 
-        {/* ✅ Main content (แต่ละหน้า) */}
-        <main className="flex-1 bg-gray-50 text-gray-800 p-8">{children}</main>
+        <main className="flex-1 bg-neutral-50 text-neutral-900 p-8">{children}</main>
       </body>
     </html>
   );
