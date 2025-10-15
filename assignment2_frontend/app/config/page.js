@@ -3,11 +3,14 @@
 import { useEffect, useState } from "react"
 import Image from "next/image";
 
+const MY_DRONE_ID = process.env.NEXT_PUBLIC_MY_DRONE_ID;
+const MY_API_URL = process.env.NEXT_PUBLIC_MY_API_URL;
+
 export default function ConfigPage() {
     const [config, setConfig] = useState(null);
 
     useEffect(() => {
-        fetch("https://web-app-backend-j07q.onrender.com/configs/66010608")
+        fetch(`${MY_API_URL}/configs/${MY_DRONE_ID}`)
             .then((res) => res.json())
             .then((data) => {
                 setConfig(data);

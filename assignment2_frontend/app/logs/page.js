@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+const MY_API_URL = process.env.NEXT_PUBLIC_MY_API_URL;
+
 export default function LogsPage() {
     const [logs, setLogs] = useState([]);
     const [page, setPage] = useState(1);
@@ -11,7 +13,7 @@ export default function LogsPage() {
         const config = JSON.parse(localStorage.getItem("droneConfig"));
         if (!config) return;
 
-        const response = await fetch(`https://web-app-backend-j07q.onrender.com/logs/${config.drone_id}?page=${pageNum}&perPage=12`);
+        const response = await fetch(`${MY_API_URL}/logs/${config.drone_id}?page=${pageNum}&perPage=12`);
         const data = await response.json();
 
         setLogs(data.items || []);

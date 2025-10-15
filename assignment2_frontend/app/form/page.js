@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState } from "react"
 
+const MY_API_URL = process.env.NEXT_PUBLIC_MY_API_URL;
+
 export default function LogFormPage() {
     const [celsius, setCelsius] = useState("");
     const [message, setMessage] = useState("");
@@ -19,7 +21,7 @@ export default function LogFormPage() {
             celsius: Number(celsius),
         };
 
-        const response = await fetch("https://web-app-backend-j07q.onrender.com/logs", {
+        const response = await fetch(`${MY_API_URL}/logs`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
