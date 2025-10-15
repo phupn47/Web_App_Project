@@ -33,6 +33,9 @@ This ensured that the web application has a consistent and modern design.
 
 -> [Click to View Full Design Board](https://www.figma.com/design/twvPiRn7snu7DkJ22OgeId/Drone-Monitoring-Dashboard?node-id=31-96&t=I9n3Vya0UZMZ3J4S-1)
 
+<img width="1346" height="414" alt="Web App Project" src="https://github.com/user-attachments/assets/0bb5bcd2-401f-4640-a46c-2ab95a0a4934" />
+
+
 ## Technologies Used
 
 | Category | Technology                  |
